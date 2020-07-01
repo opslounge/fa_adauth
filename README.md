@@ -9,7 +9,7 @@ These Playbooks will help you setup Active Directory Authentication, and configu
 
 What things you need to install the software and how to install them
 
-
+- ansible-role-includecsv [Library](https://github.com/mkouhei/ansible-role-includecsv)
  4 user groups for each role for mapping to:
 - array_admin
 - ops_admin
@@ -91,4 +91,7 @@ Execute the playbook to configure and enable Active Directory Authentiation
 ansible-playbook configuread.yaml
 ```
 
+Authors
+
+* **Andy Parsons** - - [opslounge](https://github.com/opslounge)
 
