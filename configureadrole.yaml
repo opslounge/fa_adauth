@@ -1,0 +1,48 @@
+- name: configure ad
+  hosts: flasharray
+  collections: 
+  - purestorage.flasharray
+  gather_facts: no
+  connection: local
+  tasks:
+    - include_csv: src=adcred.csv
+    - name: Create array_admin directory service role
+      purefa_dsrole:
+        state: present
+        role: array_admin
+        group_base: "OU=pure"
+        group: pureadmins
+        fa_url: "{{ item.url }}"
+        api_token: "{{ item.token }}"
+      with_items: " {{ adcred }}"
+
+    - name: Create array_admin directory service role
+      purefa_dsrole:
+        state: present
+        role: ops_admin
+        group_base: "OU=pure"
+        group: pureopsadmin
+        fa_url: "{{ item.url }}"
+        api_token: "{{ item.token }}"
+      with_items: " {{ adcred }}" 
+
+    - name: Create array_admin directory service role
+      purefa_dsrole:
+        state: present
+        role: readonly
+        group_base: "OU=pure"
+        group: purereadonly
+        fa_url: "{{ item.url }}"
+        api_token: "{{ item.token }}"
+      with_items: " {{ adcred }}"
+
+
+    - name: Create array_admin directory service role
+      purefa_dsrole:
+        state: present
+        role: storage_admin
+        group_base: "OU=pure"
+        group: purestorageadmin
+        fa_url: "{{ item.url }}"
+        api_token: "{{ item.token }}"
+      with_items: " {{ adcred }}"

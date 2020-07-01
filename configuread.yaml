@@ -1,0 +1,19 @@
+- name: configure ad
+  hosts: flasharray
+  collections: 
+  - purestorage.flasharray
+  gather_facts: no
+  connection: local
+  tasks:
+    - include_csv: src=adcred.csv
+    - name: Create directory service 
+      purefa_ds:
+        enable: true
+        state: present
+        uri: "ldap://srv-ad02.purestorage.int"
+        base_dn: "DC=purestorage,DC=int"
+        bind_user: purebind
+        bind_password: "Osmium&6"
+        fa_url: "{{ item.url }}"
+        api_token: "{{ item.token }}"
+      with_items: " {{ adcred }}"
