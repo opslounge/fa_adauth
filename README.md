@@ -61,6 +61,18 @@ url,token
 10.226.116.120,4ac5c338-a688-3c77-d6cb-xxxxxxx
 10.226.224.110,aa009fd2-7686-7d48-8698-xxxxxxx
 ```
+NOTE: the name of the CSV file is called in each playbook under 2 areas
+
+1
+```
+tasks:
+    - include_csv: src=adcred.csv #csvnamehere
+```
+2
+```
+     with_items: " {{ adcred }}"
+```
+
 
 ## Create Roles
 
