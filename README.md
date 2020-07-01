@@ -5,29 +5,29 @@
 These Playbooks will help you setup Active Directory Authentication, and configure AD roles to manage Flash Array
 
 
-### Prerequisites
+## Prerequisites
 
 What things you need to install the software and how to install them
 
-# CSV library for importing data
+### CSV library for importing data
 
 - ansible-role-includecsv [Library](https://github.com/mkouhei/ansible-role-includecsv)
 
-# 4 user groups for each role for mapping to:
+### 4 user groups for each role for mapping to:
 
 - array_admin
 - ops_admin
 - readonly
 - storage_admin
 
-# URI = ldap address of Global Catalog server
+### URI = ldap address of Global Catalog server
 - ldap.server.domain
 
-# Bind user/pass
+### Bind user/pass
 - a domain account preferrably a service account
 
 
-### CSV setup
+## CSV setup
 
 
 Each playbook pulls the array information from a CSV file
@@ -47,7 +47,7 @@ url,token
 10.226.224.110,aa009fd2-7686-7d48-8698-xxxxxxx
 ```
 
-### Create Roles
+## Create Roles
 
 This playbook will bind your AD groups to Roles for management of the array.
 
@@ -70,7 +70,7 @@ ansible-playbook configureadrole.yaml
 
 ```
 
-### Configure AD on each array
+## Configure AD on each array
 
 This playbook will configure AD auth on the array. 
 
