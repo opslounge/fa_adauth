@@ -9,17 +9,21 @@ These Playbooks will help you setup Active Directory Authentication, and configu
 
 What things you need to install the software and how to install them
 
+# CSV library for importing data
+
 - ansible-role-includecsv [Library](https://github.com/mkouhei/ansible-role-includecsv)
- 4 user groups for each role for mapping to:
+
+# 4 user groups for each role for mapping to:
+
 - array_admin
 - ops_admin
 - readonly
 - storage_admin
 
- URI = ldap address of Global Catalog server
+# URI = ldap address of Global Catalog server
 - ldap.server.domain
 
- Bind user/pass
+# Bind user/pass
 - a domain account preferrably a service account
 
 
