@@ -13,7 +13,7 @@
         uri: "ldap://srv-ad02.purestorage.int"
         base_dn: "DC=purestorage,DC=int"
         bind_user: purebind
-        bind_password: "Osmium&6"
+        bind_password: "password"
         fa_url: "{{ item.url }}"
         api_token: "{{ item.token }}"
       with_items: " {{ adcred }}"
