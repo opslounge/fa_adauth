@@ -26,6 +26,21 @@ What things you need to install the software and how to install them
 ### Bind user/pass
 - a domain account preferrably a service account
 
+## Collect Active Directory information
+
+You can open a powershell session from a windows server logged in with a domain account and 
+execute the below command to obtain a list of the groups and the baseDN. 
+
+```
+PS C:\Users\aparsons.PURESTORINT> dsquery group -name *pure*
+"CN=Pure Storage Sales,CN=Users,DC=purestorage,DC=int"
+"CN=pureadmins,OU=pure,DC=purestorage,DC=int"
+"CN=purereadonly,OU=pure,DC=purestorage,DC=int"
+"CN=pureusers,OU=purestorage.int,DC=purestorage,DC=int"
+"CN=purestorageadmin,OU=pure,DC=purestorage,DC=int"
+"CN=pureopsadmin,OU=pure,DC=purestorage,DC=int"
+``` 
+Here the baseDN="DC=purestorage,DC=int"
 
 ## CSV setup
 
